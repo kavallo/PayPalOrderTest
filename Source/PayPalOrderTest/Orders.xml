@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<orders>
+  <order name="Good Order">
+    <firstName>Some</firstName>
+    <initial>S</initial>
+    <lastName>Dude</lastName>
+    <country>US</country>
+    <address1>123 Main Street</address1>
+    <address2></address2>
+    <city>Philadelphia</city>
+    <state>PA</state>
+    <postalCode>19026</postalCode>
+    <email>dude@someco.com</email>
+    <phone>+1 (215) 555-1212</phone>
+    <cardNumber>4417119669820331</cardNumber>
+    <cvv2>874</cvv2>
+    <expireMonth>11</expireMonth>
+    <expireYear>2018</expireYear>
+    <details>
+      <detail>
+        <sku>ABC123</sku>
+        <name>SomeApp v1.0</name>
+        <price>24.95</price>
+        <quantity>1</quantity>
+      </detail>
+    </details>
+  </order>
+  <order name="Bad Order (Invalid ExpireYear)">
+    <firstName>Some</firstName>
+    <initial>S</initial>
+    <lastName>Dude</lastName>
+    <country>US</country>
+    <address1>123 Main Street</address1>
+    <address2></address2>
+    <city>Philadelphia</city>
+    <state>PA</state>
+    <postalCode>19026</postalCode>
+    <email>dude@someco.com</email>
+    <phone>+1 (215) 555-1212</phone>
+    <cardNumber>4417119669820331</cardNumber>
+    <cvv2>874</cvv2>
+    <expireMonth>11</expireMonth>
+    <expireYear>2012</expireYear>
+    <details>
+      <detail>
+        <sku>ABC123</sku>
+        <name>SomeApp v1.0</name>
+        <price>24.95</price>
+        <quantity>1</quantity>
+      </detail>
+    </details>
+  </order>
+  <order name="Bad Order (Invalid CardNumber)">
+    <firstName>Some</firstName>
+    <initial>S</initial>
+    <lastName>Dude</lastName>
+    <country>US</country>
+    <address1>123 Main Street</address1>
+    <address2></address2>
+    <city>Philadelphia</city>
+    <state>PA</state>
+    <postalCode>19026</postalCode>
+    <email>dude@someco.com</email>
+    <phone>+1 (215) 555-1212</phone>
+    <cardNumber>1111111111111111</cardNumber>
+    <cvv2>874</cvv2>
+    <expireMonth>11</expireMonth>
+    <expireYear>2018</expireYear>
+    <details>
+      <detail>
+        <sku>ABC123</sku>
+        <name>SomeApp v1.0</name>
+        <price>24.95</price>
+        <quantity>1</quantity>
+      </detail>
+    </details>
+  </order>
+</orders>

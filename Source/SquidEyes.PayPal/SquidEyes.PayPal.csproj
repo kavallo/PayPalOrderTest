@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DB31FB2-66AA-4C76-A31B-6558759D2F1B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SquidEyes.PayPal</RootNamespace>
+    <AssemblyName>SquidEyes.PayPal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.5.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\CardType.cs" />
+    <Compile Include="Enums\LogLevel.cs" />
+    <Compile Include="Enums\OrderState.cs" />
+    <Compile Include="Enums\PhoneKind.cs" />
+    <Compile Include="Exceptions\PayPalException.cs" />
+    <Compile Include="Extenders\AssemblyExtenders.cs" />
+    <Compile Include="Extenders\StringExtenders.cs" />
+    <Compile Include="Helpers\AppInfo.cs" />
+    <Compile Include="Helpers\Global.cs" />
+    <Compile Include="Helpers\HttpHelper.cs" />
+    <Compile Include="Helpers\OSInfo.cs" />
+    <Compile Include="Helpers\PayPalHelper.cs" />
+    <Compile Include="Extenders\ContextExtenders.cs" />
+    <Compile Include="Interfaces\ILogger.cs" />
+    <Compile Include="Helpers\OAuthHelper.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Protocol\Address.cs" />
+    <Compile Include="Protocol\Amount.cs" />
+    <Compile Include="Protocol\AmountDetails.cs" />
+    <Compile Include="Protocol\Authorization.cs" />
+    <Compile Include="Protocol\Capture.cs" />
+    <Compile Include="Protocol\CreditCard.cs" />
+    <Compile Include="Protocol\CreditCardToken.cs" />
+    <Compile Include="Protocol\Error.cs" />
+    <Compile Include="Protocol\ErrorDetail.cs" />
+    <Compile Include="Protocol\FundingInstrument.cs" />
+    <Compile Include="Protocol\Item.cs" />
+    <Compile Include="Protocol\ItemList.cs" />
+    <Compile Include="Protocol\Link.cs" />
+    <Compile Include="Protocol\Payee.cs" />
+    <Compile Include="Protocol\Payer.cs" />
+    <Compile Include="Protocol\PayerInfo.cs" />
+    <Compile Include="Protocol\Payment.cs" />
+    <Compile Include="Protocol\PaymentHistory.cs" />
+    <Compile Include="Protocol\RedirectUrls.cs" />
+    <Compile Include="Protocol\Refund.cs" />
+    <Compile Include="Protocol\AbstractResource.cs" />
+    <Compile Include="Protocol\Sale.cs" />
+    <Compile Include="Protocol\ShippingAddress.cs" />
+    <Compile Include="Protocol\SubTransaction.cs" />
+    <Compile Include="Protocol\Transaction.cs" />
+    <Compile Include="Protocol\Context.cs" />
+    <Compile Include="Primatives\Order.cs" />
+    <Compile Include="Primatives\Detail.cs" />
+    <Compile Include="Primatives\Outcome.cs" />
+    <Compile Include="Primatives\Config.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="SquidEyes.PayPal.licenseheader" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ISO_3166-1_List_en.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

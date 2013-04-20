@@ -1,0 +1,64 @@
+﻿<!--<notice lastUpdateOn="4/19/2013">
+  <assembly>%Namespace%</assembly>
+  <description>An interactive test harness for the SquidEyes.PayPal library</description>
+  <copyright>
+    Copyright (C) 2013 Louis S. Berman
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see http://www.gnu.org/licenses/.
+  </copyright>
+  <author>
+    <fullName>Louis S. Berman</fullName>
+    <email>louis@squideyes.com</email>
+    <website>http://squideyes.com</website>
+  </author>
+</notice>-->
+<Window x:Class="PayPalOrderTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PayPal Test"
+        SizeToContent="Height"
+        Width="360"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Closing="Window_Closing"
+        Icon="AppIcon.ico">
+    <StackPanel Margin="8">
+        <GroupBox Header="Select An Order"
+                  Padding="0,8,0,0"
+                  VerticalAlignment="Top">
+            <ComboBox ItemsSource="{Binding Orders.Keys}"
+                      IsEnabled="{Binding CanEdit}"
+                      SelectedItem="{Binding SelectedOrder, Mode=TwoWay}" />
+        </GroupBox>
+        <Grid Margin="0,8,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <CheckBox Content="Open Log When Done"
+                      VerticalAlignment="Center"
+                      IsEnabled="{Binding CanEdit}"
+                      IsChecked="{Binding OpenLogWhenDone}" />
+            <Button Grid.Column="1"
+                    Content="Place Order"
+                    Width="80"
+                    Command="{Binding PlaceOrderCommand}" />
+            <Button Grid.Column="2"
+                    Content="Close"
+                    Width="80"
+                    Command="{Binding CloseCommand}" />
+        </Grid>
+    </StackPanel>
+</Window>
